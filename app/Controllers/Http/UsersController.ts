@@ -21,7 +21,7 @@ export default class UsersController {
       }
 
 
-      public async index () {
+    public async index () {
     return await User.all()
     }
 
