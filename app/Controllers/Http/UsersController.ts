@@ -5,14 +5,15 @@
 
 export default class UsersController {
 
-    public async store(){
+    public async store({ request }){
         const user= <User> new User()
-        user.firstName= 'Children'
-        user.lastName= 'http'
-        user.age= 24
-        user.email= 'sai@gmail.com'
-        user.phoneNumber= '+917307472619'
-        user.isAdmin= true
+        const orgReqData= request.originalRequestData
+        user.firstName= orgReqData.firstName
+        user.lastName= orgReqData.lastName
+        user.age= orgReqData.age
+        user.email= orgReqData.email
+        user.phoneNumber= orgReqData.phoneNumber
+        user.isAdmin= orgReqData.isAdmin
         await user.save()
         return user
     }
