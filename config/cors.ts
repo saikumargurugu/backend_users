@@ -45,7 +45,7 @@ const corsConfig: CorsConfig = {
   |
   */
   // origin: true,
-  origin: ['http://localhost:3000']
+  origin: "http://www.myuserlist.abc.s3-website-ap-southeast-2.amazonaws.com,http://localhost:3000",
 
 
   /*
@@ -77,7 +77,7 @@ const corsConfig: CorsConfig = {
   | Function          - Receives the current header and should return one of the above values.
   |
   */
-  headers: true,
+  headers: ["*"],
 
   /*
   |--------------------------------------------------------------------------
@@ -104,6 +104,8 @@ const corsConfig: CorsConfig = {
     'content-language',
     'content-type',
     'expires',
+    "ETag",
+    "x-amz-meta-custom-header",
     'last-modified',
     'pragma',
   ],
@@ -119,7 +121,7 @@ const corsConfig: CorsConfig = {
   | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials
   |
   */
-  credentials: true,
+  credentials: false,
 
   /*
   |--------------------------------------------------------------------------
