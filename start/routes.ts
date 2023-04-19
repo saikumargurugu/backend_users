@@ -37,3 +37,7 @@ Route.get('health', async ({ response }) => {
 Route
   .resource("users", "UsersController")
   .apiOnly()
+
+  Route
+  .resource("jobs", "JobsController")
+  .apiOnly()
